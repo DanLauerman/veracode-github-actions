@@ -1,0 +1,26 @@
+@model IEnumerable<my_webapp.Models.WeatherDataModel>
+@{
+    ViewData["Title"] = "Weather";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Weather is</p>
+<div>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Temp Celsius</th>
+            <th>Temp</th>
+            <th>Summary</th>
+        </tr>
+        @foreach (var item in Model) {
+            <tr>
+                <th>@Html.DisplayFor(modelItem => item.date)</th>
+                <th>@Html.DisplayFor(modelItem => item.temperatureC)</th>
+                <th>@Html.DisplayFor(modelItem => item.temperature)</th>
+                <th>@Html.DisplayFor(modelItem => item.summary)</th>
+            </tr>
+        }
+    </table>
+</div>
+
